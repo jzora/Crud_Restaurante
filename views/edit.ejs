@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4fe1ea1cf2.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: cornsilk;
+        }
+        /* .container{
+            margin-left: 0;
+            margin-right: 0;
+        } */
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: white;">Crud Restaurante</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/" style="color: white;">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <% if (platillo) { %>
+      <div class="container mt-4 mb-4">
+        <h1>Editar Platillo</h1>
+        <form action="/update" method="post">
+            <input id="id" name="id" value='<%= platillo.cod_Platillo%>' hidden>
+            <div class="mb-3">
+              <label for="platillo" class="form-label">Plato</label>
+              <input type="text" class="form-control" id="plato" name="plato" value='<%= platillo.plato%>'>
+            </div>
+            <div class="mb-3">
+                <label for="platillo" class="form-label">Ingredientes</label>
+                <input type="text" class="form-control" id="ingredientes" name="ingredientes" value='<%= platillo.ingredientes%>'>
+            </div>
+            <div class="mb-3">
+                <label for="platillo" class="form-label">Platillos activos</label>
+                <input type="number" class="form-control" id="platillosact" name="platillosact" value='<%= platillo.platillosact%>'>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="/" class="btn btn-secondary">Cancelar</a>
+          </form>
+      </div>
+    <% } %>
+  </body>
+</html>
