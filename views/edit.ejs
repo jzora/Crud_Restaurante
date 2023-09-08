@@ -36,18 +36,18 @@
       <div class="container mt-4 mb-4">
         <h1>Editar Platillo</h1>
         <form action="/update" method="post">
-            <input id="id" name="id" value='<%= platillo.cod_Platillo%>' hidden>
+            <input id="id" name="id" value='<%= platillo.cod_Platillo %>' hidden>
             <div class="mb-3">
               <label for="platillo" class="form-label">Plato</label>
-              <input type="text" class="form-control" id="plato" name="plato" value='<%= platillo.plato%>'>
+              <input type="text" class="form-control" id="plato" name="plato" value="<%= platillo.name_Platillo %>">
             </div>
             <div class="mb-3">
                 <label for="platillo" class="form-label">Ingredientes</label>
-                <input type="text" class="form-control" id="ingredientes" name="ingredientes" value='<%= platillo.ingredientes%>'>
+                <input type="text" class="form-control" id="ingredientes" name="ingredientes" value="<%= platillo.Ingredientes %>">
             </div>
             <div class="mb-3">
                 <label for="platillo" class="form-label">Platillos activos</label>
-                <input type="number" class="form-control" id="platillosact" name="platillosact" value='<%= platillo.platillosact%>'>
+                <input type="number" class="form-control" id="platillosact" name="platillosact" value="<%= platillo.Platillos_Activos %>">
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
             <a href="/" class="btn btn-secondary">Cancelar</a>
